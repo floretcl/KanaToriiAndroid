@@ -1,12 +1,12 @@
 package dev.clementfloret.kanatorii
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
@@ -17,30 +17,44 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             KanaToriiTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+                Scaffold(
+                    bottomBar = {
+                        KanaToriiNavigationBar()
+                    }
+                ) { padding ->
+                    HomeScreen(
+                        Modifier
+                            .padding(padding)
+
+                    )
                 }
             }
         }
     }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
+@Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_NO,
+    name = "DefaultPreviewLight",
+    showBackground = true
+)
+@Preview(
+    uiMode = Configuration.UI_MODE_NIGHT_YES,
+    name = "DefaultPreviewDark",
+    showBackground = true
+)
 @Composable
 fun GreetingPreview() {
     KanaToriiTheme {
-        Greeting("Android")
+        Scaffold(
+            bottomBar = {
+                KanaToriiNavigationBar()
+            }
+        ) { padding ->
+            HomeScreen(
+                Modifier
+                    .padding(padding)
+            )
+        }
     }
 }

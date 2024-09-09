@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KanaTorii</string>
+    <string name="home">Accueil</string>
+    <string name="lists">Listes</string>
+    <string name="lessons">Leçons</string>
+    <string name="quiz">Quizs</string>
+    <string name="stats">Stats</string>
+    <string name="settings">Réglages</string>
+    <string name="home_title">Kana Torii</string>
+    <string name="home_subtitle">かな 鳥居</string>
+    <string name="home_description">Apprendre les Hiragana et Katakana de manière simple et efficace</string>
+    <string name="introduction">Introduction</string>
+    <string name="about">À propos</string>
+    <string name="share">Partager</string>
+</resources>
